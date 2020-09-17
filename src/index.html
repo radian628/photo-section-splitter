@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>Camera, Cropping, and Image Adjustment</h1>
+        <div id="camera-app">
+            <h2>Camera</h2>
+            <canvas id="camera-canvas"></canvas>
+            <button id="take-picture">Take Picture</button>
+            <div id="camera-photos">
+
+            </div>
+            <button id="continue-cropping-step">Continue to Cropping Step</button>
+        </div>
+        <div id="cropping-app" style="display:none;">
+            <h2>Crop and Adjust</h2>
+            <p>Select rectangles in the image(s) below, and they will be saved as separate, individual images that you can redownload. Double click/tap the inside of a rectangle to remove it.</p>
+            <canvas id="cropping-canvas"></canvas>
+            <p>Brightness:</p>
+            <input type="range" min="0" max="2" step="0.001" value="1" id="brightness">
+            <p>Contrast:</p>
+            <input type="range" min="0" max="2" step="0.001" value="1" id="contrast">
+            <p>In order to download all the images, <strong>you may need to click a prompt that allows the download of multiple files.</strong></p>
+            <button id="dl-cropped-rectangles">Download Cropped Rectangles</button>
+            <p>Click an image to add rectangles to it.</p>
+        </div>
+        <script src="glfilter.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>

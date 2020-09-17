@@ -1,0 +1,59 @@
+* {
+    margin: 5px;
+}
+
+#camera-photos {
+    overflow-x: scroll;
+    white-space: nowrap;
+    min-height: 100px;
+    width: 60%;
+    margin-left: 20%;
+}
+
+#camera-photos img {
+    width: 100px;
+    margin: 5px;
+}
+
+#camera-canvas, #cropping-canvas {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50vh;
+}
+
+
+
+#take-picture {
+    margin-left: 40%;
+    width: 20%;
+}
+
+#continue-cropping-step, #dl-cropped-rectangles {
+    margin-left: 35%;
+    width: 30%;
+}
+
+#cropping-canvas {
+    object-fit: contain;
+    padding: 0px;
+}
+
+
+
+p, input {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+input {
+    width: 40%;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+button {
+    font-size: 2em;
+}
