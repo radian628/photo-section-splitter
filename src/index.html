@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <h1>Camera, Cropping, and Image Adjustment</h1>
+        <p id="outdated-browser-warning" style="display: none;">Warning: Outdated browser detected. This application will<strong>not</strong>work properly, or at all!<a href="https://www.mozilla.org/en-US/firefox/new/">Download the latest version of Firefox here.</a>It will likely be faster and more convenient than what you're using now.</p>
+        <p id="error-warning" style="display: none;">Warning: An error occurred. The error message is below. Feel free to complain to me<a href="https://www.youtube.com/channel/UCLjxZnUJ5k_MweGGjYsz9uQ?view_as=subscriber">here</a>if you want it fixed. Make sure to include the error message below, and (if possible) explain how it occurred:
+            <p id="error-message" style="display: none;"></p>
+        </p>
         <div id="camera-app">
             <h2>Camera</h2>
+            <p>Note: If another app is using your camera, this may not work.</p>
             <canvas id="camera-canvas"></canvas>
             <button id="take-picture">Take Picture</button>
             <div id="camera-photos">
@@ -26,7 +32,8 @@
             <button id="dl-cropped-rectangles">Download Cropped Rectangles</button>
             <p>Click an image to add rectangles to it.</p>
         </div>
-        <script src="glfilter.js"></script>
-        <script src="app.js"></script>
+        <script crossorigin="anonymous" src="oldbrowser.js"></script>
+        <script crossorigin="anonymous" src="glfilter.js"></script>
+        <script crossorigin="anonymous" src="app.js"></script>
     </body>
 </html>

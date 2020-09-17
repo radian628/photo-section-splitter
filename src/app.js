@@ -1,3 +1,15 @@
+window.onerror = function (err, url, line, col, errObj) {
+    let errorWarning = document.getElementById("error-warning");
+    let errorMessage = document.getElementById("error-message");
+    errorWarning.style.display = "block";
+    errorMessage.style.display = "block";
+    errorMessage.innerHTML = `Error: ${err}<br>
+    URL: ${url}<br>
+    Line #: ${line}<br>
+    Column #: ${col}<br>
+    Description: ${errObj ? errObj.toString() : errObj}`;
+}
+
 let cameraCanvas = document.getElementById("camera-canvas");
 let cameraContext = cameraCanvas.getContext("2d");
 let cameraPhotos = document.getElementById("camera-photos");
@@ -67,8 +79,6 @@ async function getCamera() {
 }
 
 getCamera();
-
-
 
 
 let croppingCanvas = document.getElementById("cropping-canvas");
@@ -188,14 +198,6 @@ function continueCroppingStep() {
     document.getElementById("cropping-app").style.display = "";
     document.getElementById("cropping-app").appendChild(cameraPhotos);
 
-    // cameraCanvas.toBlob(function (blob) {
-    //     let a = document.createElement("a");
-    //     a.href = window.URL.createObjectURL(blob);
-    //     a.download = "test.jpg";
-    //     a.click();
-    //     window.URL.revokeObjectURL(blob);
-    // });
-
     croppingLoop();
 }
 
@@ -215,7 +217,6 @@ document.getElementById("dl-cropped-rectangles").onclick = function (e) {
 
             rectContext.drawImage(cameraPhotos.children[i], rect.x, rect.y, rect.w, rect.h, 0, 0, rectCanvas.width, rectCanvas.height);
 
-            //rectContext.drawImage(contrastFilter.filter(rectCanvas, Number(rectList.contrast)), 0, 0);
             contrastFilter.filter(rectCanvas, Number(rectList.contrast), img => {
 
                 let filteredImageURL = brightnessFilter.filter(img, Number(rectList.brightness), img2 => {
