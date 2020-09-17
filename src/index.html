@@ -7,7 +7,8 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <h1>Camera, Cropping, and Image Adjustment</h1>
+        <h1>Photo Section Splitter</h1>
+        <p>A webapp for separating images into rectangular regions, and making them easier to see.</p>
         <p id="outdated-browser-warning" style="display: none;">Warning: Outdated browser detected. This application will<strong>not</strong>work properly, or at all!<a href="https://www.mozilla.org/en-US/firefox/new/">Download the latest version of Firefox here.</a>It will likely be faster and more convenient than what you're using now.</p>
         <p id="error-warning" style="display: none;">Warning: An error occurred. The error message is below. Feel free to complain to me<a href="https://www.youtube.com/channel/UCLjxZnUJ5k_MweGGjYsz9uQ?view_as=subscriber">here</a>if you want it fixed. Make sure to include the error message below, and (if possible) explain how it occurred:
             <p id="error-message" style="display: none;"></p>
@@ -24,7 +25,7 @@
         </div>
         <div id="cropping-app" style="display:none;">
             <h2>Crop and Adjust</h2>
-            <p>Select rectangles in the image(s) below, and they will be saved as separate, individual images that you can redownload. Double click/tap the inside of a rectangle to remove it.</p>
+            <p>Click and drag on the image immediately below this text to select a rectangular region. Double click/tap the inside of a selection to remove it. To save these rectangles as individual images, press the "Download Cropped Rectangles" button.</p>
             <canvas id="cropping-canvas"></canvas>
             <p>Brightness:</p>
             <input type="range" min="0" max="2" step="0.001" value="1" id="brightness">
@@ -32,7 +33,7 @@
             <input type="range" min="0" max="2" step="0.001" value="1" id="contrast">
             <p>In order to download all the images, <strong>you may need to click a prompt that allows the download of multiple files.</strong></p>
             <button id="dl-cropped-rectangles">Download Cropped Rectangles</button>
-            <p>Click an image to add rectangles to it.</p>
+            <p>Click one of the images below to add rectangles to it. Rectangles are saved per-image.</p>
         </div>
         <script crossorigin="anonymous" src="oldbrowser.js"></script>
         <script crossorigin="anonymous" src="glfilter.js"></script>
